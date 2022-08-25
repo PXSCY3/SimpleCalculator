@@ -6,6 +6,8 @@ public class calculator
 
     static Scanner input2 = new Scanner(System.in);
 
+    static Scanner input3 = new Scanner(System.in);
+
     static public void main(String[] args)
     {
             start();
@@ -15,7 +17,7 @@ public class calculator
     static public void start()
     {
         System.out.println("Enter 1-4: ");
-        System.out.println("| 1 = + | 2 = - | 3 = * | 4 = / |");
+        System.out.println("| 1 = + | 2 = - | 3 = * | 4 = / | 5 = % |");
 
         int expression = input.nextInt();
 
@@ -32,6 +34,9 @@ public class calculator
                 break;
             case 4:
                 divistion();
+                break;
+            case 5:
+                percentage();
                 break;
         }
     }
@@ -86,5 +91,18 @@ public class calculator
         double sum = num1 / num2;
 
         System.out.println(num1 + " / " + num2 + " = " + sum);
+    }
+
+    static public void percentage()
+    {
+        System.out.print("Enter 1st number (Total points): ");
+        double num1 = input3.nextDouble();
+
+        System.out.print("How much % of " + num1 + " (Points you got) : ");
+        double num2 = input3.nextDouble();
+
+        double sum = (num2 / num1) * 100;
+
+        System.out.println(num2 + " of " + num1 + " = " + (Math.round(sum*10))/10 + "%");
     }
 }
